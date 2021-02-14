@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.Optional;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
@@ -33,7 +35,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void createUserHappyPath(){
+    public void createUserHappyPath() {
         when(encoder.encode("testPassword")).thenReturn("thisIsHashed");
 
         CreateUserRequest request = new CreateUserRequest();
@@ -54,4 +56,52 @@ public class UserControllerTest {
         assertEquals("test", user.getUsername());
         assertEquals("thisIsHashed", user.getPassword());
     }
+
+    @Test
+    public void findById() {
+        User expectedUser = setUser();
+        when(userRepository.findById(0L)).thenReturn(Optional.of(expectedUser));
+
+        ResponseEntity<User> response = userController.findById(0L);
+
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
+
+        User returnedUser = response.getBody();
+
+        assertNotNull(returnedUser);
+
+        assertEquals(0L, returnedUser.getId());
+        assertEquals("test", returnedUser.getUsername());
+        assertEquals("testPassword", returnedUser.getPassword());
+    }
+
+    @Test
+    public void findByUserName() {
+        User expectedUser = setUser();
+        when(userRepository.findByUsername("test")).thenReturn(expectedUser);
+
+        ResponseEntity<User> response = userController.findByUserName("test");
+
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
+
+        User returnedUser = response.getBody();
+
+        assertNotNull(returnedUser);
+
+        assertEquals(0L, returnedUser.getId());
+        assertEquals("test", returnedUser.getUsername());
+        assertEquals("testPassword", returnedUser.getPassword());
+    }
+
+    private User setUser() {
+        long id = 0L;
+        User user = new User();
+        user.setUsername("test");
+        user.setPassword("testPassword");
+        user.setId(id);
+        return user;
+    }
+
 }
