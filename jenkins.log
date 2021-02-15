@@ -1,0 +1,140 @@
+Started by user user
+Running as SYSTEM
+Building in workspace /opt/bitnami/jenkins/jenkins_home/workspace/ecommerce
+[ecommerce] $ /bin/sh -xe /tmp/jenkins7647482938737550704.sh
++ cd /var/webapp/spring/
++ sudo rm -rf nd035-c4-Security-and-DevOps
++ sudo git clone https://github.com/Adagio-cantabile/nd035-c4-Security-and-DevOps.git
+Cloning into 'nd035-c4-Security-and-DevOps'...
++ cd nd035-c4-Security-and-DevOps
++ sudo mvn clean package
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m----------------------< [0;36mcom.example:auth-course[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding auth-course 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 20 source files to /var/webapp/spring/nd035-c4-Security-and-DevOps/target/classes
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/webapp/spring/nd035-c4-Security-and-DevOps/src/test/resources
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 6 source files to /var/webapp/spring/nd035-c4-Security-and-DevOps/target/test-classes
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.example.demo.controller.[1mCartControllerTest[m
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/root/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+00:53:16.600 [main] INFO  c.e.demo.controllers.CartController - Added to cart: test
+00:53:16.639 [main] ERROR c.e.demo.controllers.CartController - Failed to remove from cart due to invalid user name: notFound
+00:53:16.641 [main] ERROR c.e.demo.controllers.CartController - Failed to add to cart due to invalid user name: notFound
+00:53:16.642 [main] ERROR c.e.demo.controllers.CartController - Failed to remove from cart due to invalid user name: test
+00:53:16.644 [main] INFO  c.e.demo.controllers.CartController - Removed from cart: test
+00:53:16.645 [main] ERROR c.e.demo.controllers.CartController - Failed to add to cart due to invalid user name: test
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.785 s - in com.example.demo.controller.[1mCartControllerTest[m
+[[1;34mINFO[m] Running com.example.demo.controller.[1mUserControllerTest[m
+00:53:16.675 [main] INFO  c.e.demo.controllers.UserController - Created user: test
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.example.demo.controller.[1mUserControllerTest[m
+[[1;34mINFO[m] Running com.example.demo.controller.[1mItemControllerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.example.demo.controller.[1mItemControllerTest[m
+[[1;34mINFO[m] Running com.example.demo.controller.[1mOrderControllerTest[m
+00:53:16.722 [main] ERROR c.e.demo.controllers.OrderController - Failed to create order due to invalid user name: notFound
+00:53:16.732 [main] INFO  c.e.demo.controllers.OrderController - Created order: test
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.example.demo.controller.[1mOrderControllerTest[m
+[[1;34mINFO[m] Running com.example.demo.[1mSareetaApplicationTests[m
+00:53:16.810 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.demo.SareetaApplicationTests], using SpringBootContextLoader
+00:53:16.813 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.example.demo.SareetaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+00:53:16.814 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.SareetaApplicationTests]: SareetaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:53:16.926 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.SareetaApplication for test class com.example.demo.SareetaApplicationTests
+00:53:17.005 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+00:53:17.038 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4602c2a9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@60fa3495, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3e2822, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@79e18e38, org.springframework.test.context.support.DirtiesContextTestExecutionListener@29a60c27, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1849db1a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@69c79f09, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@1ca25c47, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@5fcacc0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@533b266e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6d1d4d7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@89ff02e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6865c751, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@62679465]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.5.RELEASE)
+
+00:53:17.333 [main] INFO  c.e.demo.SareetaApplicationTests - Starting SareetaApplicationTests on jenkins-1-vm with PID 11651 (started by root in /var/webapp/spring/nd035-c4-Security-and-DevOps)
+00:53:17.335 [main] INFO  c.e.demo.SareetaApplicationTests - No active profile set, falling back to default profiles: default
+00:53:18.087 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+00:53:18.184 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70ms. Found 4 repository interfaces.
+00:53:18.889 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$41379667] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:53:19.155 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+00:53:19.338 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+00:53:19.415 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+00:53:19.483 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
+00:53:19.485 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+00:53:19.528 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+00:53:19.666 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+00:53:20.402 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+00:53:21.263 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+00:53:21.620 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ebbc06, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f2b9da8, org.springframework.security.web.header.HeaderWriterFilter@5d3b6585, org.springframework.web.filter.CorsFilter@50672905, org.springframework.security.web.authentication.logout.LogoutFilter@f49e81a, com.example.demo.security.JWTAuthenticationFilter@430d3021, com.example.demo.security.JWTAuthenticationVerificationFilter@58f290bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fea5ee0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b3085a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3220c28, org.springframework.security.web.session.SessionManagementFilter@2e93108a, org.springframework.security.web.access.ExceptionTranslationFilter@27dfd12b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4fdac2a7]
+00:53:22.173 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+00:53:22.551 [main] INFO  c.e.demo.SareetaApplicationTests - Started SareetaApplicationTests in 5.479 seconds (JVM running for 6.962)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.8 s - in com.example.demo.[1mSareetaApplicationTests[m
+00:53:22.604 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+00:53:22.613 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+00:53:22.616 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+00:53:22.622 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[[1;34mINFO[m]
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1;32mTests run: 19, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m]
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.1.1:jar[m [1m(default-jar)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/webapp/spring/nd035-c4-Security-and-DevOps/target/auth-course-0.0.1-SNAPSHOT.jar
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:2.1.5.RELEASE:repackage[m [1m(repackage)[m @ [36mauth-course[0;1m ---[m
+[[1;34mINFO[m] Replacing main artifact with repackaged archive
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  11.793 s
+[[1;34mINFO[m] Finished at: 2021-02-15T00:53:23Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
++ cd target
++ sudo java -jar auth-course-0.0.1-SNAPSHOT.jar --server.port=5000
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/var/webapp/spring/nd035-c4-Security-and-DevOps/target/auth-course-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/var/webapp/spring/nd035-c4-Security-and-DevOps/target/auth-course-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.5.RELEASE)
+
+00:53:24.929 [main] INFO  com.example.demo.SareetaApplication - Starting SareetaApplication v0.0.1-SNAPSHOT on jenkins-1-vm with PID 11704 (/var/webapp/spring/nd035-c4-Security-and-DevOps/target/auth-course-0.0.1-SNAPSHOT.jar started by root in /var/webapp/spring/nd035-c4-Security-and-DevOps/target)
+00:53:24.937 [main] INFO  com.example.demo.SareetaApplication - No active profile set, falling back to default profiles: default
+00:53:25.862 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+00:53:25.972 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94ms. Found 4 repository interfaces.
+00:53:26.716 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4859fd27] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Finished: SUCCESS
