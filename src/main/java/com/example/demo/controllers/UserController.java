@@ -50,7 +50,12 @@ public class UserController {
 	
 	@PostMapping("/create")
 	public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
-		User user = new User();
+		User user = userRepository.findByUsername(createUserRequest.getUsername());
+		if (user != null) {
+			log.error("Failed to create user: {}", user.getUsername());
+			return ResponseEntity.badRequest().build();
+		}
+		user = new User();
 		user.setUsername(createUserRequest.getUsername());
 		Cart cart = new Cart();
 		cartRepository.save(cart);

@@ -1,6 +1,7 @@
 package com.example.demo.security;
 
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.exceptions.SignatureVerificationException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,13 +25,17 @@ public class JWTAuthenticationVerificationFilter extends BasicAuthenticationFilt
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest req) {
         String token = req.getHeader(SecurityConstants.HEADER_STRING);
         if (token != null) {
-            String user = JWT.require(HMAC512(SecurityConstants.SECRET.getBytes())).build()
-                    .verify(token.replace(SecurityConstants.TOKEN_PREFIX, ""))
-                    .getSubject();
-            if (user != null) {
-                return new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());
+            try {
+                String user = JWT.require(HMAC512(SecurityConstants.SECRET.getBytes())).build()
+                        .verify(token.replace(SecurityConstants.TOKEN_PREFIX, ""))
+                        .getSubject();
+                if (user != null) {
+                    return new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());
+                }
+                return null;
+            } catch (SignatureVerificationException signatureVerificationException) {
+                logger.error("Can't verify signature");
             }
-            return null;
         }
         return null;
     }

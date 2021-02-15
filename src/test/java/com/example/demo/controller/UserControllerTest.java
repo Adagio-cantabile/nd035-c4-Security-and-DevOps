@@ -58,6 +58,20 @@ public class UserControllerTest {
     }
 
     @Test
+    public void createUserAlreadyExists() {
+        User user = setUser();
+        when(userRepository.findByUsername("test")).thenReturn(user);
+        CreateUserRequest request = new CreateUserRequest();
+        request.setUsername("test");
+        request.setPassword("testPassword");
+        request.setConfirmPassword("testPassword");
+
+        ResponseEntity<User> response = userController.createUser(request);
+        assertNotNull(response);
+        assertEquals(400, response.getStatusCodeValue());
+    }
+
+    @Test
     public void findById() {
         User expectedUser = setUser();
         when(userRepository.findById(0L)).thenReturn(Optional.of(expectedUser));
